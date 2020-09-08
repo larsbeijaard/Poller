@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Poller": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "token": "NzUyODI4MzI2MDQ5MDg3NjI5.X1dUAw.g3i7Bk1e0-PM7ycTAtg1jrvRgQ8"
+      }
+    }
+  }
+}
