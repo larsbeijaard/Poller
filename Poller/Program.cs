@@ -25,7 +25,7 @@ namespace Poller
                 _services.GetRequiredService<CommandService>();
 
                 // Login with the bot
-                await _client.LoginAsync(TokenType.Bot, Environment.GetEnvironmentVariable("token"));
+                await _client.LoginAsync(TokenType.Bot, AppDomain.CurrentDomain.BaseDirectory + "token.tkn");
                 await _client.StartAsync();
 
                 await _services.GetRequiredService<CommandHandlingService>().InitializeAsync();
