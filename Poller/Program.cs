@@ -4,6 +4,7 @@ using Discord.WebSocket;
 using Microsoft.Extensions.DependencyInjection;
 using Poller.Service;
 using System;
+using System.IO;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace Poller
                 _services.GetRequiredService<CommandService>();
 
                 // Login with the bot
-                await _client.LoginAsync(TokenType.Bot, AppDomain.CurrentDomain.BaseDirectory + "token.tkn");
+                await _client.LoginAsync(TokenType.Bot, File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "token.tkn"));
                 await _client.StartAsync();
 
                 await _services.GetRequiredService<CommandHandlingService>().InitializeAsync();
