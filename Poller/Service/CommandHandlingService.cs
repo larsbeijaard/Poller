@@ -47,7 +47,28 @@ namespace Poller.Service
         {
             if (!_command.IsSpecified || _result.IsSuccess) return;
 
-            await _context.Channel.SendMessageAsync($"error: {_result}");
+            //// The bot owner
+            SocketUser _userID = m_Client.GetUser(368317619838779393);
+
+            //SocketGuild _guild = (SocketGuild)_context.Guild;
+            //SocketUser _user = (SocketUser)_context.User;
+            SocketMessage _message = (SocketMessage)_context.Message;
+
+            //EmbedBuilder _embed = new EmbedBuilder
+            //{
+            //    Title = $"**Ohno! An error occured!**",
+            //    Description = $"" +
+            //    $"Server Name: {_guild.Name}" +
+            //    $"\nSender Name: {_message.Author}" +
+            //    $"\nSender ID: {_user.Id}" +
+            //    $"\nMessage: {_message.Content}" +
+            //    $"\nTime: {_message.Timestamp.LocalDateTime}",
+            //    Color = new Color(114, 137, 218)
+            //};
+
+            await _message.DeleteAsync();
+            //await UserExtensions.SendMessageAsync(_userID, "", false, _embed.Build());
+            await UserExtensions.SendMessageAsync(_userID, $"error: {_result.Error}");
         }
     }
 }
