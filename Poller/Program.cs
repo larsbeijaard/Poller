@@ -18,22 +18,20 @@ namespace Poller
 
         private async Task StartBot()
         {
-            using (var _services = ConfigureServices())
-            {
-                var _client = _services.GetRequiredService<DiscordSocketClient>();
+            using var _services = ConfigureServices();
+            var _client = _services.GetRequiredService<DiscordSocketClient>();
 
-                _client.Log += LogAsync;
-                _services.GetRequiredService<CommandService>();
+            _client.Log += LogAsync;
+            _services.GetRequiredService<CommandService>();
 
-                // Login with the bot
-                await _client.LoginAsync(TokenType.Bot, File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "token.tkn"));
-                await _client.StartAsync();
+            // Login with the bot
+            await _client.LoginAsync(TokenType.Bot, File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "token.tkn"));
+            await _client.StartAsync();
 
-                await _services.GetRequiredService<CommandHandlingService>().InitializeAsync();
+            await _services.GetRequiredService<CommandHandlingService>().InitializeAsync();
 
-                // Blocks the program from closing
-                await Task.Delay(Timeout.Infinite);
-            }
+            // Blocks the program from closing
+            await Task.Delay(Timeout.Infinite);
         }
 
         private Task LogAsync(LogMessage _arg)
