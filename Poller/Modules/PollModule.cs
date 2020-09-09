@@ -14,19 +14,11 @@ namespace Poller.Modules
         public PollModule(IServiceProvider _services)
         {
             m_Client = _services.GetRequiredService<DiscordSocketClient>();
-
-            m_Client.ReactionAdded += OnReactionAddedAsync;
-        }
-
-        private async Task OnReactionAddedAsync(Cacheable<IUserMessage, ulong> _user, ISocketMessageChannel _message, SocketReaction _reaction)
-        {
-            await ReplyAsync("(test) Dont you dare to add reactions!");
-            // Todo: make it so when there has been a reaction added to this bots its message, remove the reaction
         }
 
         [Command("poll")]
         [Summary("Start a poll!")]
-        public async Task PollAsync([Remainder]string _poll)
+        public async Task PollAsync([Remainder] string _poll)
         {
             SocketUser _user = Context.User;
             SocketUserMessage _message = Context.Message;
