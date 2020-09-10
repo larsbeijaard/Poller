@@ -42,11 +42,11 @@ namespace Poller
 
         private ServiceProvider ConfigureServices()
         {
+            // Setup the service provider
             return new ServiceCollection()
                 .AddSingleton<DiscordSocketClient>()
                 .AddSingleton<CommandService>()
                 .AddSingleton<CommandHandlingService>()
-                .AddSingleton<HttpClient>()
                 .BuildServiceProvider();
         }
     }
