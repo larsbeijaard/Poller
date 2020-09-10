@@ -1,7 +1,6 @@
 ﻿using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
 
@@ -9,13 +8,6 @@ namespace Poller.Modules
 {
     public class PollModule : ModuleBase<SocketCommandContext>
     {
-        private readonly DiscordSocketClient m_Client;
-
-        public PollModule(IServiceProvider _services)
-        {
-            m_Client = _services.GetRequiredService<DiscordSocketClient>();
-        }
-
         [Command("poll")]
         [Summary("Start a poll!")]
         public async Task PollAsync([Remainder] string _poll)
@@ -23,22 +15,23 @@ namespace Poller.Modules
             SocketUser _user = Context.User;
             SocketUserMessage _message = Context.Message;
 
-            EmbedAuthorBuilder _embedAuthor = new EmbedAuthorBuilder
+            EmbedFooterBuilder _footer = new EmbedFooterBuilder()
             {
-                Name = _message.Author.ToString(),
+                Text = $"Poll creatd by {_message.Author}",
                 IconUrl = _user.GetAvatarUrl()
             };
 
             EmbedBuilder _embed = new EmbedBuilder
             {
-                Author = _embedAuthor,
                 Color = new Color(120, 125, 255),
-                Description = _poll,
-                Title = "A new poll appeard!"
+                Description = $"*{_poll}*",
+                Title = "A new poll appeard!",
+                Footer = _footer
             };
 
             await _message.DeleteAsync();
             IUserMessage _reponse = await ReplyAsync(null, false, _embed.Build());
+
             await _reponse.AddReactionsAsync(new Emoji[]
             {
                 new Emoji("✅"),
