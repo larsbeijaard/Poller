@@ -20,6 +20,7 @@ namespace Poller.Service
             m_Client = _service.GetRequiredService<DiscordSocketClient>();
             m_Service = _service;
 
+            // Events
             m_Commands.CommandExecuted += CommandExecutedAsync;
             m_Client.MessageReceived += MessageReceivedAsync;
         }
@@ -35,11 +36,13 @@ namespace Poller.Service
             if (!(_rawMessage is SocketUserMessage _message)) return;
             if (_message.Source != MessageSource.User) return;
 
+            // Make sure that the bot will only react to its given prefix
             int _argsPos = 0;
             if (!_message.HasCharPrefix('!', ref _argsPos)) return;
 
             var _context = new SocketCommandContext(m_Client, _message);
 
+            // Execute the command
             await m_Commands.ExecuteAsync(_context, _argsPos, m_Service);
         }
 
@@ -47,28 +50,14 @@ namespace Poller.Service
         {
             if (!_command.IsSpecified || _result.IsSuccess) return;
 
-            //// The bot owner
-            SocketUser _userID = m_Client.GetUser(368317619838779393);
 
-            //SocketGuild _guild = (SocketGuild)_context.Guild;
-            //SocketUser _user = (SocketUser)_context.User;
+            // Delete the send command
             SocketMessage _message = (SocketMessage)_context.Message;
-
-            //EmbedBuilder _embed = new EmbedBuilder
-            //{
-            //    Title = $"**Ohno! An error occured!**",
-            //    Description = $"" +
-            //    $"Server Name: {_guild.Name}" +
-            //    $"\nSender Name: {_message.Author}" +
-            //    $"\nSender ID: {_user.Id}" +
-            //    $"\nMessage: {_message.Content}" +
-            //    $"\nTime: {_message.Timestamp.LocalDateTime}",
-            //    Color = new Color(114, 137, 218)
-            //};
-
             await _message.DeleteAsync();
-            //await UserExtensions.SendMessageAsync(_userID, "", false, _embed.Build());
-            await UserExtensions.SendMessageAsync(_userID, $"error: {_result.Error}");
+
+            // If there is an error, let the bot owner know
+            SocketUser _userID = m_Client.GetUser(368317619838779393); // Bot owner user ID
+            await UserExtensions.SendMessageAsync(_userID, $"error: {_result.ErrorReason}");
         }
     }
 }
