@@ -50,7 +50,6 @@ namespace Poller.Service
         {
             if (!_command.IsSpecified || _result.IsSuccess) return;
 
-
             // Delete the send command
             SocketMessage _message = (SocketMessage)_context.Message;
             await _message.DeleteAsync();

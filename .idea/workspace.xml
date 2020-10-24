@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="717067c7-3d2f-4020-94c4-0fbf165c9941" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1hgbBCKDU3mvNGSR1KiRG4Akj9s" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Program/Xampps/htdocs/NatuurlijkGroeneveld" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="717067c7-3d2f-4020-94c4-0fbf165c9941" name="Default Changelist" comment="" />
+      <created>1600435544635</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600435544635</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="892" y="409" key="#Custom_Plugin_Repositories" timestamp="1600436814169">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="892" y="409" key="#Custom_Plugin_Repositories/1920.-418.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1600436814169" />
+    <state x="712" y="343" key="#Notifications" timestamp="1600436843932">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="712" y="343" key="#Notifications/1920.-418.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1600436843932" />
+    <state x="552" y="160" key="#Plugins" timestamp="1600436862016">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="160" key="#Plugins/1920.-418.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1600436862016" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600436259808">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.-418.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1600436259808" />
+    <state x="718" y="389" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1600436243113">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="718" y="389" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.-418.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1600436243113" />
+    <state x="793" y="251" key="FileChooserDialogImpl" timestamp="1600600139312">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="793" y="251" key="FileChooserDialogImpl/1920.-418.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1600600139312" />
+    <state x="514" y="155" key="SettingsEditor" timestamp="1600437385581">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="514" y="155" key="SettingsEditor/1920.-418.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1600437385581" />
+  </component>
+</project>

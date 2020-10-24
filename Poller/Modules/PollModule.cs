@@ -25,7 +25,7 @@ namespace Poller.Modules
             {
                 Color = new Color(120, 125, 255),
                 Description = $"*{_poll}*",
-                Title = "A new poll appeard!",
+                Title = "A new poll appeared!",
                 Footer = _footer
             };
 
